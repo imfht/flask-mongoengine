@@ -171,7 +171,7 @@ class JSONField(TextAreaField):
         if self.raw_data:
             return self.raw_data[0]
         else:
-            return self.data and unicode(json.dumps(self.data, default=str, indent=4)) or ""
+            return self.data and json.dumps(self.data, default=str, indent=4) or ""
 
     def process_formdata(self, value):
         if value:
